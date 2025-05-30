@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2025 a las 04:46:20
+-- Tiempo de generación: 30-05-2025 a las 20:25:45
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -39,7 +39,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`idcliente`, `nombre`, `email`, `telefono`) VALUES
-(5, 'coca', 'wevulution5@gmail.com', '12312321313');
+(12, 'Laura Fernández', 'laurafernandez@gamil.com', '911 234 789');
 
 -- --------------------------------------------------------
 
@@ -51,10 +51,16 @@ CREATE TABLE `proyectos` (
   `idproyecto` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `descripcion` text DEFAULT NULL,
-  `fechainicio` date DEFAULT NULL,
-  `fechafin` date DEFAULT NULL,
+  `fechainicio` datetime DEFAULT current_timestamp(),
   `idcliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `proyectos`
+--
+
+INSERT INTO `proyectos` (`idproyecto`, `nombre`, `descripcion`, `fechainicio`, `idcliente`) VALUES
+(9, 'Rediseño Web', 'Proyecto enfocado en modernizar el sitio web institucional de la empresa de Laura, incluyendo lo que pide el cliente, optimizacion SEO y migracion a una plataforma CMS autogestionable.', '2025-05-30 00:48:46', 12);
 
 -- --------------------------------------------------------
 
@@ -77,7 +83,8 @@ INSERT INTO `usuario` (`idusuario`, `username`, `password`) VALUES
 (2, 'lol', '$2y$10$2d03jJ8ZPFAfxBfAaGgIluNusJZS901zcJqb9mGip78Q5SLwVxx6.'),
 (3, 'eqwe', '$2y$10$KeRIC0CnXl527yCHc6s5uehL3sFE/QgImx3qXss/fM.sI8RTtW/N6'),
 (4, 'manuel', '$2y$10$CMqNshDzwtV.huDVoRaY3Oqf5xYfdv5hgqtRNa3ee0fC6014rNyT2'),
-(5, 'fabio', '$2y$10$EIAxgMxi2M9wl642gzCTL.HK9fI0v2v0xSQ4rvuCruO9/VQ0MKvIy');
+(5, 'fabio', '$2y$10$EIAxgMxi2M9wl642gzCTL.HK9fI0v2v0xSQ4rvuCruO9/VQ0MKvIy'),
+(6, 'conocido', '$2y$10$cEW2REfKcKFOlkW1g3GsT.lX9SOijW4wM28tyav4D1GUbBUvyLecO');
 
 --
 -- Índices para tablas volcadas
@@ -111,19 +118,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
 ALTER TABLE `proyectos`
-  MODIFY `idproyecto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idproyecto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restricciones para tablas volcadas
