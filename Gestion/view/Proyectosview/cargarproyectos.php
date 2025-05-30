@@ -42,30 +42,31 @@
                 <div class="mt-4">
                     <div class="card">
                         <div class="card-body">
-                            <h2>Lista de Clientes</h2>
-                            <a href="index.php?accion=crearcliente" class="btn btn-primary mb-3">Nuevo Cliente</a>
+                            <h2>Lista de Proyectos</h2>
+                            <a href="index.php?accion=crearproyecto" class="btn btn-primary mb-3">Nuevo Proyecto</a>
 
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>
-                                        <th>Email</th>
-                                        <th>Teléfono</th>
+                                        <th>fechainicio</th>
+                                        <th>Cliente</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    foreach ($clientes as $c) {
+                                    foreach ($proyectos as $p) {
                                     ?>
                                         <tr>
-                                            <td><?= $c['idcliente'] ?></td>
-                                            <td><?= $c['nombre'] ?></td>
-                                            <td><?= $c['email'] ?></td>
-                                            <td><?= $c['telefono'] ?></td>
+                                            <td><?= $p['idproyecto'] ?></td>
+                                            <td><?= $p['nombre'] ?></td>
+                                            <td><?= $p['fechainicio'] ?></td>
+                                            <td><?= $p['idcliente'] ?></td>
                                             <td>
-                                                <a href="index.php?accion=eliminarcliente&id=<?= $c['idcliente'] ?>" class="btn btn-danger btn-sm" >Eliminar</a>
+                                                <a href="index.php?accion=eliminarproyecto&id=<?= $p['idproyecto'] ?>" class="btn btn-danger btn-sm">Eliminar</a>
+                                                <a href="index.php?accion=generarPDFProyecto&idcli=<?= $p['idcliente'] ?>&idpro=<?= $p['idproyecto'] ?>" class="btn btn-secondary btn-sm">PDF</a>
                                             </td>
                                         </tr>
                                     <?php

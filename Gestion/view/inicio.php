@@ -27,7 +27,7 @@ if (!isset($_SESSION['usuario'])) {
                             <a class="nav-link text-white" href="../index.php?accion=cargarcliente">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="index.php?accion=proyectos">Proyectos</a>
+                            <a class="nav-link text-white" href="../index.php?accion=cargarproyecto">Proyectos</a>
                         </li>
                     </ul>
                 </div>
